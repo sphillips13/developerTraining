@@ -40,6 +40,8 @@ public class CreateTicket {
      * Description:
      *     This function is creates a ticket object and returns it. This will set up the Default TD attributes and one
      *     custom attribute.
+     *
+     * @return Ticket that has attributes built
      */
     public Ticket buildDeveloperTicket() {
 
@@ -79,6 +81,8 @@ public class CreateTicket {
      *     tdapi to create the actaul ticket in TD.
      * @param TeamDynamix tdapi
      * @param Ticket developerTicket
+     *
+     * @return int of the newly created ticket ID
      */
     public int createDeveloperTicket(Ticket developerTicket, TeamDynamix tdapi) {
 

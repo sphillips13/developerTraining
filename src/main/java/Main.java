@@ -50,15 +50,19 @@ public class Main {
         /***************************** Step 1 **********************************/
         // Log into TD
         // TODO: Create 3 strings. BASE_PATH, username, and password. Use environment variables to get those values
-        String BASE_PATH = System.getenv("tdbasepath");
+        String basePath = System.getenv("tdbasepath");
         String username = System.getenv("tduser");
         String password = System.getenv("tdpassword");
 
         // TODO: Create TD Object
-        TeamDynamix tdapi = new TeamDynamix(BASE_PATH, username, password);
+        TeamDynamix tdapi = new TeamDynamix(basePath, username, password);
 
-        // TODO: Log into TD
-        login(tdapi);
+        // TODO: Login to TD using your td object
+        try {
+            tdapi.login();
+        } catch (TDException e) {
+            e.printStackTrace();
+        }
 
         // Class objects created.
         GetReport getReport = new GetReport();
@@ -71,22 +75,5 @@ public class Main {
         /***************************** Step 3 **********************************/
         // Create a Developer Test ticket
         createTicket.run(tdapi);
-
-    }
-
-    /*
-     * Login
-     * Description:
-     *     Uses the td object to login.
-     * @param TeamDynamix td
-     */
-    public static void login(TeamDynamix td) {
-
-        // TODO: Login to TD using your td object
-        try {
-            td.login();
-        } catch (TDException e) {
-            e.printStackTrace();
-        }
     }
 }

@@ -54,6 +54,8 @@ public class GetReport {
      *     Read the passed in report and returns the amount of rows
      *
      * @param Report report
+     *
+     * @return int size of report
      */
     public static int readReportData(Report report) {
 
@@ -94,6 +96,8 @@ public class GetReport {
      * @param TeamDynamix td
      * @param Report report
      * @param int reportID
+     *
+     * @return Report that was successfully valid
      */
     public static Report validateReport(TeamDynamix tdapi, int reportID) {
 
