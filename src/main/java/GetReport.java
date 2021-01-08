@@ -10,7 +10,7 @@ import java.util.Map;
  * Get Report Class
  * Description:
  *     This Classes purpose for the Training is to get an idea of how to get data from a report. You will read in
- *     the ticket IDs from a report and save that into a list. Then you will display the size of the list which
+ *     the TicketID's from a report and save that to a list. Then you will display the size of the list which
  *     will also be the total amount of tickets on the report read in.
  */
 
@@ -21,25 +21,22 @@ import java.util.Map;
 public class GetReport {
 
     /*
-     * run
+     * Run
      * Description:
-     *     Sets up the td object and logs the user in. This will
+     *     This function will call the UserInterface Class that will prompt the user for a report. This will then
+     *     call the ReadReportData() function to make sure the report is valid and
+     *     read in the TicketID's.
+     *     18171 for this project.
+     *
      * @param TeamDynamix tdapi
      */
     public static void run(TeamDynamix tdapi) {
 
-       // TODO: Create a UI Object. You will need to great that class
-        UserInterface ui = new UserInterface();
-
-        // TODO: Get a report ID from ui
-        // Please use report ID 18171. There should be 5 tickets on this report
-        int reportID = ui.getReportID(tdapi);
-
         // TODO: Create Report Object and set it equal to validateReport()
         // The Report Object comes from the tdapi
-        Report report = validateReport(tdapi, reportID);
+        Report report = getTDReport(tdapi);
 
-        // TODO: Call readReportData and pass in the report
+        // TODO: Create a reportTotal int and set it equal to readReportData() and pass in the report
         int reportTotal = readReportData(report);
 
         // TODO: Output reportTotal
@@ -51,7 +48,7 @@ public class GetReport {
     /*
      * Read Report Data
      * Description:
-     *     Read the passed in report and returns the amount of rows
+     *     Reads the passed in report and returns the amount of rows
      *
      * @param Report report
      *
@@ -63,21 +60,21 @@ public class GetReport {
         List<Integer> ticketIDsList = new ArrayList<>();
         String currentTicket;
 
-        // TODO: Create a double nested for loop to read the Row/Column
         // Reads the report by Row and Column
         for (Map<String, String> row : report.getDataRows()) {  // Row
             for (String key : row.keySet()) { // Column
 
                 // TODO: Get the Key of "TicketID"
                 // NOTICE: We are using "TicketID" because that is a default attribute to TD
-                // if this was a custom attribute, we would look for it attribute ID.
+                // if this was a custom attribute, we would look for it attribute ID number
                 if (key.equals("TicketID")) {
 
                     // TODO: Assign currentTicket a value using "row.get(key)"
                     // row.get(key) saves the ticketID in a string like "123456.0"
-                    // this will lose the floating point number
                     currentTicket = row.get(key);
-                    // TODO: Add currentTicket to your Array
+
+                    // TODO: Add currentTicket to your Array as an int
+                    // This will lose the floating point number by casting it to a int
                     ticketIDsList.add((int) (Float.parseFloat(currentTicket)));
 
                 }
@@ -99,16 +96,24 @@ public class GetReport {
      *
      * @return Report that was successfully valid
      */
-    public static Report validateReport(TeamDynamix tdapi, int reportID) {
+    public static Report getTDReport(TeamDynamix tdapi) {
+
+        // TODO: Create a UI Object. You will need to create that class
+        UserInterface ui = new UserInterface();
 
         // TODO: Create report object
         Report report = null;
 
-        // TODO: Check if the report is valid and add data to the report object
+        // TODO: Create a simple while loop to prompt for a report until its valid
         boolean validReport = false;
-        while (!validReport){
+        while (!validReport) {
 
             try {
+                // TODO: Get a report ID from the UI Object
+                // Please use report ID 18171. There should be 5 tickets on this report
+                int reportID = ui.getReportID(tdapi);
+
+                // TODO: Set the report Object to the tdapi.getReport(). If that fails, then report is invalid
                 report = tdapi.getReport(reportID, true, null);
                 validReport = true;
             } catch (TDException e) {
@@ -116,6 +121,7 @@ public class GetReport {
                 validReport = false;
             }
         }
+        // TODO: Return report Object
         return report;
 
     }

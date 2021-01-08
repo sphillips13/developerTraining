@@ -28,7 +28,7 @@ public class CreateTicket {
         // TODO: Create a Ticket object and set it equal to buildDeveloperTicket()
         Ticket developerTicket = buildDeveloperTicket();
 
-        // TODO: Create a int called newlyCreatedTicketID and set it equal to tcreateDeveloperTicket()
+        // TODO: Create a int called newlyCreatedTicketID and set it equal to createDeveloperTicket()
         int newlyCreatedTicketID = createDeveloperTicket(developerTicket, tdapi);
 
         // TODO: Display newlyCreatedTicketID
@@ -46,11 +46,12 @@ public class CreateTicket {
     public Ticket buildDeveloperTicket() {
 
         // TODO: Create a Ticket and DeveloperTicketIds object
+        // NOTE: You will need to set the ID's for DeveloperTicketIDs class
         Ticket developerTicket = new Ticket();
         DeveloperTicketIDs iDs = new DeveloperTicketIDs();
 
         // NOTE: This link comes from the TeamDynamix Api website. This link shows what values are required
-        // in order to use the create ticket function in our tdapi class.
+        // in order to use the create ticket function in our tdapi class
         // https://api.teamdynamix.com/TDWebApi/Home/type/TeamDynamix.Api.Tickets.Ticket
 
         // TODO: Using the Ticket and DeveloperTicketIDs objects you created, set the values for;
@@ -71,14 +72,16 @@ public class CreateTicket {
         CustomAttribute customAttribute = new CustomAttribute(iDs.DEVELOPER_TAG_ID, Integer.toString(iDs.DEVELOPER_TAG_VALUE_HTML_ID));
         developerTicket.getAttributes().add(customAttribute);
 
+        // TODO: Return your Ticket Object
         return developerTicket;
     }
 
     /*
      * Create Developer Ticket
      * Description:
-     *     This function takes the ticket that was build from the buildDeveloperTicket() function and uses the
-     *     tdapi to create the actaul ticket in TD.
+     *     This function takes the ticket that was built from the buildDeveloperTicket() function and uses the
+     *     tdapi to create the actual ticket in TD.
+     *
      * @param TeamDynamix tdapi
      * @param Ticket developerTicket
      *
@@ -86,20 +89,21 @@ public class CreateTicket {
      */
     public int createDeveloperTicket(Ticket developerTicket, TeamDynamix tdapi) {
 
-        // TODO: Create a DeveloperTicketIDs objec and an createdTicketID int
+        // TODO: Create a DeveloperTicketIDs object and a createdTicketID int
         DeveloperTicketIDs iDs = new DeveloperTicketIDs();
         int createdTicketID = 0;
 
-        // TODO: Use the tdapi and call createTicket() to create your ticket you built
+        // TODO: Use the tdapi and call createTicket() to create the ticket you built
         // Creates the Developer Training ticket
         try {
-            // https://api.teamdynamix.com/TDWebApi/Home/section/Tickets
+            // API Call Link: https://api.teamdynamix.com/TDWebApi/Home/section/Tickets
             Ticket newlyCreatedTicket = tdapi.createTicket(iDs.APP_ID, developerTicket);
             createdTicketID = newlyCreatedTicket.getId();
         } catch (TDException e) {
             e.printStackTrace();
         }
 
+        // TODO: return createdTicketID
         return createdTicketID;
     }
 }

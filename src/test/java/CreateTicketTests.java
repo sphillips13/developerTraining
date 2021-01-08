@@ -16,7 +16,7 @@ import td.api.Ticket;
  */
 public class CreateTicketTests {
 
-    // TODO: Creat a CreatTicket and Ticket Object
+    // TODO: Create CreatTicket, DeveloperTicketIDs, and Custom Attribute Objects
     private CreateTicket testCreateTicket = new CreateTicket();
     private Ticket testDeveloperTicket = new Ticket();
     private DeveloperTicketIDs iDs = new DeveloperTicketIDs();
@@ -35,7 +35,6 @@ public class CreateTicketTests {
 
     @Test
     public void shouldBuildDeveloperTicketCorrectly() throws Exception {
-
 
         // TODO: Assert that each value set is correct
         // Default Attributes

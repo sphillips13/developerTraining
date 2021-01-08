@@ -49,7 +49,7 @@ public class Main {
 
         /***************************** Step 1 **********************************/
         // Log into TD
-        // TODO: Create 3 strings. BASE_PATH, username, and password. Use environment variables to get those values
+        // TODO: Create 3 strings. basePath, username, and password. Use environment variables to get those values
         String basePath = System.getenv("tdbasepath");
         String username = System.getenv("tduser");
         String password = System.getenv("tdpassword");
@@ -69,7 +69,7 @@ public class Main {
         CreateTicket createTicket = new CreateTicket();
 
         /***************************** Step 2 **********************************/
-        // Read in a report output the amount of tickets on that report 18171
+        // Read in a report and output the amount of tickets on that report. Use reportID 18171
         getReport.run(tdapi);
 
         /***************************** Step 3 **********************************/
