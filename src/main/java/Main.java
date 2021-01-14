@@ -50,19 +50,10 @@ public class Main {
         /***************************** Step 1 **********************************/
         // Log into TD
         // TODO: Create 3 strings. basePath, username, and password. Use environment variables to get those values
-        String basePath = System.getenv("tdbasepath");
-        String username = System.getenv("tduser");
-        String password = System.getenv("tdpassword");
 
         // TODO: Create TD Object
-        TeamDynamix tdapi = new TeamDynamix(basePath, username, password);
 
         // TODO: Login to TD using your td object
-        try {
-            tdapi.login();
-        } catch (TDException e) {
-            e.printStackTrace();
-        }
 
         // Class objects created.
         GetReport getReport = new GetReport();

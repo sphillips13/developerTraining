@@ -13,24 +13,24 @@ public class DeveloperTicketIDs {
 
     // TODO: Find the IDs for these variables. The values name are in the comments on the left
     // Attributes needed on the Developer Training Ticket
-    public static final int FORM_ID = 3300;                                             // Developer Training Ticket
-    public static final int STATUS_ID = 979;                                            // NEW
-    public static final int APP_ID = 63;                                                // (BSC) Training
-    public static final int DEVELOPER_TAG_ID = 11141;                                   // Developer Training Tag
-    public static final int TYPE_ID = 857;                                              // Developer Training
-    public static final int ACCOUNT_ID = 553;                                           // Community Member
-    public static final int PRIORITY_ID = 21;                                           // Medium/High(3)
-    public static final String REQUESTOR_UID = "e578bb85-0041-e511-80d1-005056ac5ec6";  // Albus Dumbledore
-    public static final String TITLE = "Developer Training Ticket";                     // Developer Training Ticket
-    public static final String DESCRIPTION = "R2S2 Member Test Ticket";                 // R2S2 Member Test Ticket
+    public static final int FORM_ID = ;                                             // Developer Training Ticket
+    public static final int STATUS_ID = ;                                           // NEW
+    public static final int APP_ID = ;                                              // (BSC) Training
+    public static final int DEVELOPER_TAG_ID = ;                                    // Developer Training Tag
+    public static final int TYPE_ID = ;                                             // Developer Training
+    public static final int ACCOUNT_ID = ;                                          // Community Member
+    public static final int PRIORITY_ID = ;                                         // Medium/High(3)
+    public static final String REQUESTOR_UID = ;                                    // Albus Dumbledore
+    public static final String TITLE = ;                                            // Developer Training Ticket
+    public static final String DESCRIPTION = ;                                      // R2S2 Member Test Ticket
 
     // TODO: Find the IDs for the values of the Developer Training Tag attributes.
     // Developer Training Tag Values
-    public static final int DEVELOPER_TAG_VALUE_HTML_ID = 34696;                       // HTML
-    public static final int DEVELOPER_TAG_VALUE_PYTHON_ID = 34701;                     // Python
-    public static final int DEVELOPER_TAG_VALUE_CSS_ID = 34697;                        // CSS
-    public static final int DEVELOPER_TAG_VALUE_JAVA_ID = 34698;                       // JAVA
-    public static final int DEVELOPER_TAG_VALUE_PHP_ID = 34699;                        // PHP
-    public static final int DEVELOPER_TAG_VALUE_CPP_ID = 34700;                        // C++
+    public static final int DEVELOPER_TAG_VALUE_HTML_ID = ;                       // HTML
+    public static final int DEVELOPER_TAG_VALUE_PYTHON_ID = ;                     // Python
+    public static final int DEVELOPER_TAG_VALUE_CSS_ID = ;                        // CSS
+    public static final int DEVELOPER_TAG_VALUE_JAVA_ID = ;                       // JAVA
+    public static final int DEVELOPER_TAG_VALUE_PHP_ID = ;                        // PHP
+    public static final int DEVELOPER_TAG_VALUE_CPP_ID = ;                        // C++
 
 }
