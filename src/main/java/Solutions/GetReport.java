@@ -33,7 +33,7 @@ public class GetReport {
      */
     public static void run(TeamDynamix tdapi) {
 
-        // TODO: Create Report Object and set it equal to validateReport()
+        // TODO: Create Report Object and set it equal to getTDReport()
         // The Report Object comes from the tdapi
         Report report = getTDReport(tdapi);
 
